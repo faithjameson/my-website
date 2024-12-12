@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu - Jameson Bistro</title>
+<meta name="description" content="Explore the delicious menu at Jameson Bistro, featuring appetizers, main courses, and desserts.">
+<link rel="stylesheet" href="style.css">
+<style>
+
+body {
+font-family: 'Arial', sans-serif;
+line-height: 1.6;
+margin: 0;
+padding: 0;
+background-color: #f8f8f8;
+color: #333;
+}
+header {
+background-color: #333;
+color: beige;
+padding: 1em 0;
+text-align: center;
+}
+header h1 {
+margin: 0;
+font-size: 2.5em;
+}
+
+header p {
+font-size: 1.1em;
+margin: 0.5em 0;
+}
+nav {
+margin-top: 1em;
+}
+
+nav a {
+color: beige;
+text-decoration: none;
+margin: 0 1em;
+font-weight: bold;
+}
+nav a:hover {
+text-decoration: underline;
+}
+main {
+padding: 2em;
+max-width: 1200px;
+margin: auto;
+}
+section {
+margin-bottom: 3em;
+}
+
+h2 {
+color: #444;
+border-bottom: 2px solid #aaa;
+display: inline-block;
+margin-bottom: 0.5em;
+font-size: 1.8em;
+}
+ul {
+list-style: none;
+padding: 0;
+}
+
+li {
+margin: 1em 0;
+padding: 1em;
+border-radius: 5px;
+background: #fff;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+li span {
+color: #444;
+font-weight: bold;
+}
+
+.slider-container {
+position: relative;
+overflow: hidden;
+margin-bottom: 3em;
+border-radius: 10px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.slider {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+
+.slider-image {
+min-width: 100%;
+height: 400px;
+object-fit: cover;
+}
+
+.slider-controls {
+position: absolute;
+top: 50%;
+left: 0;
+right: 0;
+display: flex;
+justify-content: space-between;
+transform: translateY(-50%);
+pointer-events: none;
+}
+.slider-controls button {
+pointer-events: all;
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 0.5em 1em;
+cursor: pointer;
+font-size: 1.5em;
+border-radius: 50%;
+transition: background 0.3s;
+}
+.slider-controls button:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer {
+text-align: center;
+padding: 1em 0;
+background-color: #444;
+color: white;
+font-size: 0.9em;
+}
+footer p {
+margin: 0;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Our Menu</h1>
+<p>Explore the flavours of Jameson Bistro.</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact Us</a>
+<a href="menu.html">Menu</a>
+<a href="booking.html">Booking</a>
+</nav>
+</header>
+
+<main>
+   
+<section class="slider-container">
+<div class="slider">
+<img src="bread2.jpg" alt="Image of Garlic Bread" class="slider-image">
+<img src="steak2.jpg" alt="Image of Ribeye Steak" class="slider-image">
+<img src="cake2.jpg" alt="Chocolate Lava Cake" class="slider-image">
+</div>
+<div class="slider-controls">
+<button class="prev" onclick="prevImage(1)">&#10094;</button>
+<button class="next" onclick="nextImage(1)">&#10095;</button>
+</div>
+</section>
+<section>
+<h2>Appetizers</h2>
+<ul>
+<li><strong>Garlic Bread</strong> - Toasted baguette with garlic butter. <span>€6.99</span></li>
+<li><strong>Bruschetta</strong> - Fresh tomatoes, basil, and olive oil on toasted bread. <span>€6.99</span></li>
+<li><strong>Stuffed Mushrooms</strong> - Mushrooms filled with cream cheese and herbs. <span>€7.99</span></li>
+</ul>
+</section>
+<section>
+<h2>Main Courses</h2>
+<ul>
+<li><strong>Grilled Salmon</strong> - Served with seasonal vegetables. <span>€19.99</span></li>
+<li><strong>Ribeye Steak</strong> - Juicy ribeye with garlic butter and fries. <span>€26.99</span></li>
+<li><strong>Pasta Primavera</strong> - Fresh pasta with seasonal vegetables. <span>€18.99</span></li>
+</ul>
+</section>
+<section>
+<h2>Desserts</h2>
+<ul>
+<li><strong>Chocolate Lava Cake</strong> - Molten chocolate cake with vanilla ice cream. <span>€9.99</span></li>
+<li><strong>Cheesecake</strong> - Creamy cheesecake with a graham cracker crust. <span>€8.99</span></li>
+<li><strong>Fruit Tart</strong> - Tart crust filled with custard and fresh fruit. <span>€7.99</span></li>
+</ul>
+</section>
+</main>
+
+<footer>
+<p>&copy; 2024 Jameson Bistro. All rights reserved.</p>
+</footer>
+
+<script>
+let currentIndex1 = 0;
+const images1 = document.querySelectorAll('.slider-image');
+const totalImages1 = images1.length;
+
+function showImage(index) {
+const offset = -index * 100;
+document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+}
+
+function nextImage() {
+currentIndex1 = (currentIndex1 + 1) % totalImages1;
+showImage(currentIndex1);
+}
+
+function prevImage() {
+currentIndex1 = (currentIndex1 - 1 + totalImages1) % totalImages1;
+showImage(currentIndex1);
+}
+
+setInterval(nextImage, 3000); // Auto slide every 3 seconds
+</script>
+</body>
+
+</html>
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking | Jameson Bistro</title>
+<meta name="description" content="Reserve your table at Jameson Bistro and enjoy a delightful dining experience.">
+<link rel="stylesheet" href="style.css">
+<style>
+    
+header {
+background-color: #004d00; 
+color: beige;
+padding: 1em 0;
+text-align: center;
+}
+
+header h1 {
+margin: 0;
+font-size: 2.5em;
+}
+
+header p {
+font-size: 1.1em;
+margin: 0.5em 0;
+}
+
+nav {
+margin-top: 1em;
+}
+
+nav a {
+color: beige;
+text-decoration: none;
+font-weight: bold;
+margin: 0 1em;
+}
+
+nav a:hover {
+text-decoration: underline;
+}
+
+.active {
+text-decoration: underline;
+}
+
+main {
+background-color: #333;
+color: beige;
+padding: 3em 0;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 1em;
+}
+
+.booking-form {
+background-color: #444;
+padding: 2em;
+border-radius: 10px;
+max-width: 700px;
+margin: 0 auto;
+}
+
+.form-group {
+margin-bottom: 1.5em;
+}
+
+.form-group label {
+font-size: 1.2em;
+margin-bottom: 0.5em;
+display: block;
+}
+
+.form-group input,
+.form-group select {
+width: 100%;
+padding: 0.8em;
+font-size: 1em;
+background-color: #222;
+color: beige;
+border: 2px solid #444;
+border-radius: 5px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+border-color: #ffb30f;
+outline: none;
+}
+
+.btn-submit {
+background-color: #ffb30f;
+color: beige;
+padding: 1em 2em;
+border: none;
+border-radius: 5px;
+font-size: 1.2em;
+cursor: pointer;
+width: 100%;
+}
+
+.btn-submit:hover {
+background-color: #e69500;
+}
+
+.audio-greeting {
+text-align: center;
+margin: 2em 0;
+}
+
+.video-embed {
+text-align: center;
+margin-top: 2em;
+}
+
+.video-embed iframe {
+border-radius: 10px;
+}
+
+footer {
+background-color: #222;
+color: beige;
+padding: 1em 0;
+text-align: center;
+}
+
+footer nav {
+margin-top: 1em;
+}
+
+footer nav a {
+color: beige;
+text-decoration: none;
+margin: 0 1em;
+}
+
+footer nav a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+<header>
+<h1>Reserve Your Table</h1>
+<p>Plan your visit to Jameson Bistro. Fill out the form below to book your spot.</p>
+<nav>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="booking.html" class="active">Booking</a>
+</nav>
+</header>
+
+<main>
+<div class="container">
+<section class="audio-greeting">
+<button onclick="document.getElementById('greeting-audio').play()">Play Greeting</button>
+<audio id="greeting-audio">
+<source src="restaurant-bell.mp3" type="audio/mp3">
+<source src="restaurant-bell.ogg" type="audio/ogg">
+Your browser does not support the audio element.
+</audio>
+</section>
+
+<section class="booking-form">
+<form action="#" method="POST">
+<div class="form-group">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" placeholder="Enter your name" required>
+</div>
+
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="email" placeholder="Enter your email" required>
+</div>
+
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+</div>
+
+<div class="form-group">
+<label for="date">Date</label>
+<input type="date" id="date" name="date" required>
+</div>
+
+<div class="form-group">
+<label for="time">Time</label>
+<input type="time" id="time" name="time" required>
+</div>
+
+<div class="form-group">
+<label for="guests">Number of Guests</label>
+<input type="number" id="guests" name="guests" placeholder="Enter number of guests" min="1" max="20" required>
+</div>
+
+<button type="submit" class="btn-submit">Book Now</button>
+</form>
+</section>
+
+<section class="video-embed">
+<h2>Watch Our Restaurant Introduction</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xPPLbEFbCAo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+</div>
+</main>
+
+<footer>
+<p>&copy; 2024 Jameson Bistro. All rights reserved.</p>
+<nav>
+<a href="index.html">Home</a> |<a href="menu.html">Menu</a> |
+<a href="about.html">About Us</a> |
+<a href="contact.html">Contact</a> |
+<a href="booking.html">Booking</a>
+</nav>
+</footer>
+</body>
+
+</html>
+
+
+
+
+
